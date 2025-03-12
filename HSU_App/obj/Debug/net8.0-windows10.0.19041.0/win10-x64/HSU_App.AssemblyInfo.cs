@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HSU_App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+8c04585a726d8a4b1f85408858700cb0efaac1b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("HSU_App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HSU_App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
