@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HSU_App.ViewModels"
+             x:Class="HSU_App.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor ="{StaticResource White}">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand"   Margin="20,0,20,0" MaximumWidthRequest="600">
+        
+        <Image Source="hsu_icon.svg" WidthRequest="154" HeightRequest="75" Margin="0,-150,0,80" Scale="1.4" ></Image>
+        
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand"   Margin="20,0,20,0">
+            <Label Text="Tên đăng nhập" FontSize="Micro" HorizontalTextAlignment="Start" Margin="0,0,0,10" TextColor="{StaticResource Black}" FontAttributes="Bold"/>
+            <Frame CornerRadius="10" Margin="0,0,0,20" Padding="0" HasShadow="False" HeightRequest="56" BackgroundColor="{StaticResource White}">
+                <Entry Text="{Binding UsernameEntry}" Placeholder="Username" Margin="5" TextColor="{StaticResource Black}"  FontAttributes="Bold"/>
+            </Frame>
+
+            <Grid  Margin="0,0,0,10" >
+                <Label Text="Mật khẩu" FontSize="Micro" HorizontalTextAlignment="Start" TextColor="{StaticResource Black}" FontAttributes="Bold"/>
+                <Label  FontSize="Micro" HorizontalTextAlignment="End"  FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Quên mặt khẩu?" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+            <Frame CornerRadius="10" Margin="0,0,0,20" Padding="0" HasShadow="False" HeightRequest="56" BackgroundColor="{StaticResource White}">
+                <Grid>
+                    <Entry Text="{Binding PasswordEntry}" Placeholder="Password" x:Name="passwordEntry" IsPassword="True" Margin="5" TextColor="{StaticResource Black}"  FontAttributes="Bold"/>
+                    <ImageButton HorizontalOptions="End" x:Name="togglePasswordButton" Source="eye_off_outline.svg" Margin="5" Clicked="OnTogglePasswordClicked" BackgroundColor="Transparent" Scale="0.6" WidthRequest="50" HeightRequest="50"/>
+                </Grid>
+            </Frame>
+
+            <Button Text="Đăng nhập" x:Name="loginButton" HeightRequest="46" CornerRadius="50" Padding="0" FontAttributes="Bold"   Background="{StaticResource Primary}" Command="{Binding LoginCommand}"/>
+        </StackLayout>
+        
+
+    </StackLayout>
+    
+</ContentPage>
